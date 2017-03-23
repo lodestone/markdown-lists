@@ -7,5 +7,5 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-"atom-text-editor[data-grammar~='gfm']":
-    "enter": "markdown-lists:insert-new-line"
+"atom-text-editor[data-grammar~='asciidoc']":
+    "enter": "asciidoc:insert-new-line"

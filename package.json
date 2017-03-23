@@ -1,12 +1,12 @@
 {
-  "name": "markdown-lists",
+  "name": "asciidoctor-in-the-house",
   "main": "./lib/markdown-lists",
   "version": "0.0.2",
-  "description": "Insert new list items in a Github-flavored Markdown document",
+  "description": "Insert new list items in an Asciidoc document",
   "activationCommands": {
-    "atom-text-editor": "markdown-lists:insert-new-line"
+    "atom-text-editor": "asciidoc:insert-new-line"
   },
-  "repository": "https://github.com/brunobord/markdown-lists",
+  "repository": "https://github.com/lodestone/markdown-lists",
   "license": "MIT",
   "engines": {
     "atom": ">=0.174.0 <2.0.0"

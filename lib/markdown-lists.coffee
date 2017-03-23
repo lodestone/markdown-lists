@@ -1,13 +1,13 @@
 MarkdownListsView = require './markdown-lists-view'
 {CompositeDisposable} = require 'atom'
 
-LIST_UL_REGEX = /// ^ (\s*) ([*+-]) \s+ (.*) $ ///
-LIST_OL_REGEX = /// ^ (\s*) (\d+)\. \s+ (.*) $ ///
+LIST_UL_REGEX = /// ^ (\s*) (\*+) \s+ (.*) $ ///
+LIST_OL_REGEX = /// ^ (\s*) (\.+) \s+ (.*) $ ///
 LIST_TL_REGEX = /// ^ (\s*) (-\ \[[xX\ ]\]) \s+ (.*) $ ///
 
 module.exports =
   activate: ->
-    atom.commands.add 'atom-text-editor', "markdown-lists:insert-new-line", => @insertNewLine()
+    atom.commands.add 'atom-text-editor', "asciidoc:insert-new-line", => @insertNewLine()
 
   insertNewLine: ->
     # This assumes the active pane item is an editor
@@ -25,7 +25,8 @@ module.exports =
     else if matches = LIST_UL_REGEX.exec(line)
       value = "\n#{matches[1]}#{matches[2]} "
     else if matches = LIST_OL_REGEX.exec(line)
-      value = "\n#{matches[1]}#{parseInt(matches[2], 10) + 1}. "
+      # value = "\n#{matches[1]}#{parseInt(matches[2], 10) + 1}. "
+      value = "\n#{matches[1]}#{matches[2]} "
 
     if matches && !matches[3]
       return replaceLine: true, value: matches[1] || "\n"
